@@ -6,5 +6,15 @@
     image: alpine
     command: [ sh ]
     source: |
-      echo "welcome to {{ workflow.parameters.global }}
+      echo "welcome to {{ workflow.parameters.global }}"
       echo "{{ inputs.parameters.message }}"
+- name: exit-handler
+  inputs:
+    parameters:
+      - name: param1
+  script:
+    image: alpine
+    command: [ sh ]
+    source: |
+      echo "exiting"
+      echo "{{ inputs.parameters.param1 }}"
